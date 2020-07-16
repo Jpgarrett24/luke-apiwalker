@@ -16,11 +16,19 @@ function App() {
 
   return (
     <>
-      <Link to="/">Home</Link>
-      <Form inputs={inputs} setInputs={setInputs}></Form>
-      <Router>
-        <Data path="/:resource/:id" data={data} setData={setData}></Data>
-      </Router>
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+        </nav>
+      </header>
+      <section className="form">
+        <Form inputs={inputs} setInputs={setInputs}></Form>
+      </section>
+      <main>
+        <Router>
+          <Data path="/:resource/:id" data={data} setData={setData} inputs={inputs} setInputs={setInputs}></Data>
+        </Router>
+      </main>
     </>
   );
 }
